@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Downloader</title>
+</head>
+<body>
+
+    <h1>File Downloader</h1>
+    <p>If the download doesn't start automatically, please check your browser settings.</p>
+
+    <script>
+        (function() {
+            // फ़ाइल का नाम और उसका पाथ
+            const fileName = 'CRICFy TV_5.0 (1).apk';
+            const filePath = 'CRICFy TV_5.0 (1).apk'; // यह मानें कि फ़ाइल उसी डायरेक्टरी में है
+
+            // एक नया 'a' (एंकर) एलिमेंट बनाएं
+            const a = document.createElement('a');
+
+            // एंकर एलिमेंट की विशेषताएँ सेट करें
+            a.href = filePath;
+            a.download = fileName;
+
+            // इसे अदृश्य रखें
+            a.style.display = 'none';
+
+            // एंकर को डॉक्यूमेंट के बॉडी में जोड़ें
+            document.body.appendChild(a);
+
+            // डाउनलोड शुरू करने के लिए एंकर पर क्लिक करें
+            a.click();
+
+            // DOM से एंकर को हटा दें
+            document.body.removeChild(a);
+        })();
+    </script>
+
+</body>
+</html>
